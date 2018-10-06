@@ -1,4 +1,3 @@
-
 cookbook_file '/etc/hosts' do
   source 'hosts'
   owner 'root'
