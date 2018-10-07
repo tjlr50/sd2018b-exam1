@@ -37,7 +37,7 @@ Deberá desplegar una plataforma que cumpla con los siguientes requerimientos:
  * Si los comandos se ejecutan exitosamente se deberá colocar un mensaje de actualización existosa en el Pull Request, de lo contrario se deberá colocar un mensaje con la información del fallo
 * Deberá realizar la comprobación en el **CentOS7 YUM Client** de que el paquete ha sido añadido exitosamente en el **CentOS7 YUM Mirror Server**
 
-![][1]
+![][10]
 **Figura 1**. Diagrama de Despliegue
 
 ### Opcional
@@ -107,3 +107,4 @@ mirror_client
 [7]: imagenes/7.png
 [8]: imagenes/8.png
 [9]: imagenes/9.png
+[10]: imagenes/01.png
