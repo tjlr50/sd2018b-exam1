@@ -98,12 +98,12 @@ Inicialmente se usó un repositorio en Github para llevar un desarrollo adecuado
 * http://flask.pocoo.org/
 * https://connexion.readthedocs.io/en/latest/
 
-[1]: images/1.png
-[2]: images/2.png
-[3]: images/3.png
-[4]: images/4.png
-[5]: images/5.png
-[6]: images/6.png
-[7]: images/7.png
-[8]: images/8.png
-[9]: images/9.png
+[1]: imagenes/1.png
+[2]: imagenes/2.png
+[3]: imagenes/3.png
+[4]: imagenes/4.png
+[5]: imagenes/5.png
+[6]: imagenes/6.png
+[7]: imagenes/7.png
+[8]: imagenes/8.png
+[9]: imagenes/9.png
