@@ -64,10 +64,10 @@ maquinas a aprovisionar, interfaces solo anfitrión, interfaces tipo puente, dec
 
 Inicialmente se usó un repositorio en Github para llevar un desarrollo adecuado, versionado y accesible de la solución, la cual inicia con un Vagrantfile que será el encargado de desplegar 4 maquinas virtuales usando chef como herramienta de administración de configuración.
 
-### dhcp_Server
-### mirror_server
-### ci_server
-### mirror_client
+dhcp_Server
+mirror_server
+ci_server
+mirror_client
 
 ### comando vagrant up 
 
