@@ -58,18 +58,18 @@ maquinas a aprovisionar, interfaces solo anfitrión, interfaces tipo puente, dec
 6. Incluya evidencias que muestran el funcionamiento de lo solicitado (15%)
 7. Documente algunos de los problemas encontrados y las acciones efectuadas para su solución al aprovisionar la infraestructura y aplicaciones (10%)
 
-### Solución 
+## Solución 
 
-## Desarrollo de la implementación
+### Desarrollo de la implementación
 
 Inicialmente se usó un repositorio en Github para llevar un desarrollo adecuado, versionado y accesible de la solución, la cual inicia con un Vagrantfile que será el encargado de desplegar 4 maquinas virtuales usando chef como herramienta de administración de configuración.
 
-# dhcp_Server
-# mirror_server
-# ci_server
-# mirror_client
+### dhcp_Server
+### mirror_server
+### ci_server
+### mirror_client
 
-# comando vagrant up 
+### comando vagrant up 
 
 
  ![][2] 
@@ -98,4 +98,12 @@ Inicialmente se usó un repositorio en Github para llevar un desarrollo adecuado
 * http://flask.pocoo.org/
 * https://connexion.readthedocs.io/en/latest/
 
-[1]: images/01_diagrama_despliegue.png
+[1]: images/1.png
+[2]: images/2.png
+[3]: images/3.png
+[4]: images/4.png
+[5]: images/5.png
+[6]: images/6.png
+[7]: images/7.png
+[8]: images/8.png
+[9]: images/9.png
