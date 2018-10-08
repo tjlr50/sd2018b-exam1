@@ -4,7 +4,12 @@
 **Nombre:** Tomas Julian Lemus Rubiano.  
 **Tema:** Automatización de infraestructura  
 **Correo:** tjlr50@gmail.com
+
 **Código:** A00054616
+
+**Git:** github.com/tjlr50
+
+
 ### Objetivos
 * Realizar de forma autónoma el aprovisionamiento automático de infraestructura
 * Diagnosticar y ejecutar de forma autónoma las acciones necesarias para lograr infraestructuras estables
@@ -62,32 +67,70 @@ maquinas a aprovisionar, interfaces solo anfitrión, interfaces tipo puente, dec
 
 ### Desarrollo de la implementación
 
-Inicialmente se usó un repositorio en Github para llevar un desarrollo adecuado, versionado y accesible de la solución, la cual inicia con un Vagrantfile que será el encargado de desplegar 4 maquinas virtuales usando chef como herramienta de administración de configuración.
+Para iniciar, se gestionó la estructura por carpetas que correspondiera a cada segmento de la solución y para enterdelo se usó el siguiente diagrama. Se usó un repositorio en Github para llevar un desarrollo adecuado, versionado y accesible de la solución, la cual inicia con un Vagrantfile que será el encargado de desplegar 4 maquinas virtuales usando chef como herramienta de administración de configuración.
 
-dhcp_Server
-mirror_server
-ci_server
-mirror_client
 
-### comando vagrant up 
+![][10]
+**Figura 1**. Diagrama de Despliegue
 
+![][11]
+**Figura 1**. Estructura Vagrantfile
+
+
+### comando vagrant up y varannt status para corroborar el estado de las maquinas
 
  ![][2] 
  
+dhcp_Server
+
+mirror_server
+
+ci_server
+
+mirror_client
+
+Para esto, se deben instalar cada servicio y asignar sus respectivas recipes dentro un archivo default.rb.
+
+### Default.rb para el DHCP SERVER
+
+
+```
+include_recipe 'dhcp_server::dhcpd_install
+include_recipe 'dhcp_server::dhcpd_conf
+include_recipe 'dhcp_server::dhcpd_init
+ ```
+ 
+El correcto funcionamiento permite intercambiar keygens con el CI Server a través del ssh-keygen y ssh-copy-ip vagrant@192.168.132.12
+
  ![][3]
   
-  ![][4]
+Posteriormente, para hacer accesibles los archivos (endpoint) desde la red, se configura ngrok en una carpeta del CI SERVER y se accde por el puerto asignado
   
-  ![][5]
+ ![][4]
   
-  ![][6]
+Ahora se deben correr las siguientes lineas de código del deploy para la integración y se muestra el repolist inicial.
+export PYTHONPATH=$PYTHONPATH:`pwd`
+export FLASK_ENV=development
+connexion run gm_analytics/swagger/indexer.yaml --debug -p 8080
+
+![][1]
+
+Se configura el webhook de nuestro reopsitorio utilizando la url dinámica del ngrok y la ruta especifica dentro del sistema de archivos.
+
+ ![][5]
+ Se selecciona pull request como criterio para la ejecución del endpoint.
+ ![][6]
   
-  ![][7]
+ ![][7]
   
-  ![][8]
+ ![][8]
   
-  ![][9]
+ ![][9]
+  
+ ## Problemas encontrados
  
+El problema principal fue establecer un orden de trabajo que permita un desarrollo conciso de las tareas, para esto se tomó el diagrama del despliegue como base y se incorporó al sistema de archivos del sistema, tomando como ejemplo las actividades realizadas en clase.
+Personalmente, la busqueda de la información parece ser labor de gran importancia para este tipo de actividades como el aprovisionamiento de máquinas virtuales, ya que implica el abastecimiento de tecnologías que pueden ser nuevas y confusas como chef y el modelo de recetas; nuevamente, los ejemplos previos al exámen permiten generalizar el modelo. Finalmente, el entendimiento de las tecnologías sugeridas como la librerías de python y ngrok añaden complejidad al desarrollo, para esto se esudiaron las fuentes recomendadas. En terminos de trabajo sucedieron interrupciones como reservas de la sala inesperadas que al momento de seguir no recordaba lo que estaba fallando.  
 
 
 ### Referencias
@@ -108,3 +151,5 @@ mirror_client
 [8]: imagenes/8.png
 [9]: imagenes/9.png
 [10]: imagenes/01.png
+[11]: imagenes/vagrantfile.png
+
